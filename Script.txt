@@ -1,0 +1,47 @@
+CREATE TABLE `test`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NULL,
+  `pwd` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NULL,
+  `varchar` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC));
+
+
+CREATE TABLE `test`.`offices` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `address` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NOT NULL,
+  `zipcode` VARCHAR(10) NULL,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+
+CREATE TABLE `test`.`assets` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `org_tag` VARCHAR(10) NOT NULL,
+  `idlocation` INT NULL,
+  `manufacturer` VARCHAR(45) NULL,
+  `manufacturer_numb` VARCHAR(45) NULL,
+  `description` VARCHAR(200) NULL,
+  `date` DATE NULL,
+  `notes` VARCHAR(200) NULL,
+    PRIMARY KEY (`id`));
+
+
+ALTER TABLE `test`.`offices` 
+ADD COLUMN `phone` VARCHAR(25) NULL AFTER `name`;
+
+
+CREATE TABLE `test`.`test` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+INSERT INTO `test`.`users` (`id`, `username`, `pwd`, `name`, `varchar`) VALUES ('1', 'sucram', '123', 'Marcus', '911');
+
+INSERT INTO `test`.`test` (`id`, `name`) VALUES ('1', 'Hillary Bush');
+INSERT INTO `test`.`test` (`id`, `name`) VALUES ('2', 'Donald Duck');
+
